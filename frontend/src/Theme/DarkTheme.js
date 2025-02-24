@@ -4,7 +4,7 @@ export const darkTheme = createTheme({
   palette: {
     mode: "dark", // Ensures dark mode is enabled
     primary: {
-      main: "#e91e63", // Pink
+      main: "#385E3C", // Pink
     },
     secondary: {
       main: "#5A20CB", // Purple

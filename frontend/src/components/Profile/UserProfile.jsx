@@ -2,7 +2,7 @@ import React from 'react'
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
 import { Button } from '@mui/material';
 
-const UserProfile = () => {
+const UserProfile = ({ user }) => {
   const handleLogout=()=>{
 
   }
