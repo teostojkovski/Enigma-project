@@ -41,7 +41,6 @@ public class AppConfig {
             public CorsConfiguration getCorsConfiguration(HttpServletRequest request) {
                 CorsConfiguration cfg = new CorsConfiguration();
                 cfg.setAllowedOrigins(Arrays.asList(
-                        "https://foood-shop.vercel.app/",
                         "http://localhost:8080/",
                         "http://localhost:3000/"
                 ));

@@ -1,4 +1,3 @@
-
 import { api } from "../../Config/api";
 import { 
     CREATE_CATEGORY_FAILURE, 
@@ -123,7 +122,6 @@ export const updateRestaurant = ({ restaurantId, restaurantData, jwt }) => {
                 },
             });
             dispatch({type: UPDATE_RESTAURANT_SUCCESS, payload: res.data});
-            console.log("all restaurants", data);
         } catch (error) {
             dispatch({type: UPDATE_RESTAURANT_FAILURE, payload: error});
         }
@@ -232,7 +230,7 @@ export const getRestaurantsEvents = ({ restaurantId, jwt }) => {
                 },
             });
             dispatch({type: GET_RESTAURANTS_EVENTS_SUCCESS, payload: res.data});
-            console.log("all restaurants", data);
+            console.log("get restaurants event", res.data);
         } catch (error) {
             dispatch({type: GET_RESTAURANTS_EVENTS_FAILURE, payload: error});
         }
