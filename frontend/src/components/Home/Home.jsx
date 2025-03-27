@@ -35,7 +35,7 @@ const Home = () => {
             <h1 className='text-2xl font-semibold text-gray-400 pb-5'>Order From Our Favourites</h1>
             <div className='flex flex-wrap items-center justify-around gap-5'>
                 {
-                    restaurants.map((item)=><RestaurantCard/>)
+                    restaurant.restaurants.map((item)=><RestaurantCard item={item}/>)
                 }
             </div>
         </section>
