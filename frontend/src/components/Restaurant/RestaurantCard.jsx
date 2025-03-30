@@ -32,7 +32,7 @@ const RestaurantCard = ({item}) => {
             <p className="text-gray-500 text-sm">{item.description}</p>
           </div>
           <div>
-            <IconButton>
+            <IconButton onClick={handleAddToFavourites}>
               {isFavourited(auth.favourites, item)?<FavoriteIcon/>:<FavoriteBorderIcon/>}
             </IconButton>
           </div>
