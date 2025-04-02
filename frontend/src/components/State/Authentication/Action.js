@@ -57,6 +57,7 @@ export const getUser=(jwt)=>async(dispatch)=>{
 }
 
 export const addToFavourites=(jwt, restaurantId)=>async(dispatch)=>{
+    console.log("Restaurant ID before request:", restaurantId);
     dispatch({type:ADD_TO_FAVOURITES_REQUEST})
     try{
         const {data} = await api.put(`/api/restaurants/${restaurantId}/add-favourites`, {}, {

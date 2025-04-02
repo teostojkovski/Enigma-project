@@ -14,7 +14,7 @@ const RestaurantCard = ({item}) => {
   const {auth}=useSelector(store=>store)
 
   const handleAddToFavourites=()=>{
-    dispatch(addToFavourites({restaurantId:item.id, jwt}))
+    dispatch(addToFavourites(jwt, item.id))
   }
   return (
     <Card className='w-[18rem]'>
