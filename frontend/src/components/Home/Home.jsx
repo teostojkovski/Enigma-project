@@ -16,6 +16,7 @@ const Home = () => {
     useEffect(()=>{
         dispatch(getAllRestaurantsAction(jwt))
     },[])
+
     return (
     <div className='pb-10'>
         <section className='banner -z-50 relative flex flex-col justify-center items-center'>
@@ -32,10 +33,10 @@ const Home = () => {
             <MultiItemCarousel/>
         </section>
         <section className='px-5 lg:px-20 pt-10'>
-            <h1 className='text-2xl font-semibold text-gray-400 pb-5'>Order From Our Favourites</h1>
+            <h1 className='text-2xl font-semibold text-gray-400 pb-5'>Order From Our Favorites</h1>
             <div className='flex flex-wrap items-center justify-around gap-5'>
                 {
-                    restaurant.restaurants.map((item)=><RestaurantCard item={item}/>)
+                    restaurant?.restaurants?.map((item)=><RestaurantCard key={item.id} item={item}/>)
                 }
             </div>
         </section>
