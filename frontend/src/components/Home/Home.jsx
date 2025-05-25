@@ -9,7 +9,7 @@ const restaurants=[1,1,1,1,1,1,1,1]
 const Home = () => {
     const dispatch = useDispatch()
     const jwt = localStorage.getItem("jwt")
-    const {restaurant} = useSelector(store=>store)
+    const restaurant = useSelector((store)=>store.restaurant)
     
     console.log("restaurant", restaurant)
 

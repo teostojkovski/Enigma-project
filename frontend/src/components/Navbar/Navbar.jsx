@@ -9,7 +9,7 @@ import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
 export const Navbar = () => {
-    const {auth}=useSelector(store=>store)
+    const auth=useSelector((store)=>store.auth)
     const navigate=useNavigate()
     const handleAvatarClick=()=>{
         if(auth.user?.role==="ROLE_CUSTOMER"){

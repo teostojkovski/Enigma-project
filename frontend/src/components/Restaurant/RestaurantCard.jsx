@@ -11,19 +11,17 @@ const RestaurantCard = ({item}) => {
   const navigate=useNavigate()
   const dispatch=useDispatch()
   const jwt=localStorage.getItem("jwt")
-  const {auth}=useSelector(store=>store)
+  const auth=useSelector((store)=>store.auth)
 
   const handleAddToFavourites=()=>{
     dispatch(addToFavourites(jwt, item.id))
   }
 
   const handleNavigateRestaurant=()=>{
-        if(item.open){
-            navigate(`/restaurant/${item.address.city}/${item.name}/${item.id}`)
-        }
-    }
+      navigate(`/restaurant/${item.address.city}/${item.name}/${item.id}`)
+  }
   return (
-    <Card className='w-[18rem]'>
+    <Card onClick={handleNavigateRestaurant} className='w-[18rem] cursor-pointer'>
         <div className={`${true?'cursor-pointer':"cursor-not-allowed"} relative`}>
           <img className='w-full h-[10rem rounded-t-md object-cover' src={item.images[2]} alt="" />
           <Chip 
@@ -34,7 +32,7 @@ const RestaurantCard = ({item}) => {
         </div>
         <div className='p-4 textPart lg:flex w-full justify-between'>
           <div className='space-y-1'>
-            <p onClick={handleNavigateRestaurant} className="font-semibold text-lg text-left cursor-pointer">{item.name}</p>
+            <p className="font-semibold text-lg text-left">{item.name}</p>
             <p className="text-gray-500 text-sm">{item.description}</p>
           </div>
           <div>
