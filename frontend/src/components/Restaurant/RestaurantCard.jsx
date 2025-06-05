@@ -21,9 +21,9 @@ const RestaurantCard = ({item}) => {
       navigate(`/restaurant/${item.address.city}/${item.name}/${item.id}`)
   }
   return (
-    <Card onClick={handleNavigateRestaurant} className='w-[18rem] cursor-pointer'>
+    <Card className='w-[18rem] cursor-pointer'>
         <div className={`${true?'cursor-pointer':"cursor-not-allowed"} relative`}>
-          <img className='w-full h-[10rem rounded-t-md object-cover' src={item.images[2]} alt="" />
+          <img onClick={handleNavigateRestaurant} className='w-full h-[10rem rounded-t-md object-cover' src={item.images[2]} alt="" />
           <Chip 
           size="small" 
           className="absolute top-2 left-2"
@@ -32,7 +32,7 @@ const RestaurantCard = ({item}) => {
         </div>
         <div className='p-4 textPart lg:flex w-full justify-between'>
           <div className='space-y-1'>
-            <p className="font-semibold text-lg text-left">{item.name}</p>
+            <p onClick={handleNavigateRestaurant} className="font-semibold text-lg text-left">{item.name}</p>
             <p className="text-gray-500 text-sm">{item.description}</p>
           </div>
           <div>

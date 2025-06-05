@@ -5,7 +5,7 @@ import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
 import MenuCard from './MenuCard';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import { getRestaurantById } from '../State/Restaurant/Action';
+import { getRestaurantById, getRestaurantsCategory } from '../State/Restaurant/Action';
 
 const categories=["pizza", "pasta", "burger", "chicken", "dessert"];
 const foodTypes=[
@@ -35,6 +35,7 @@ const RestaurantDetails = () => {
 
     useEffect(()=>{
         dispatch(getRestaurantById({jwt, restaurantId:id}))
+        dispatch(getRestaurantsCategory({jwt, restaurantId:id}))
     }, [])
   return (
     <div className='px-5 lg:px-20 text-left'>
@@ -44,29 +45,24 @@ const RestaurantDetails = () => {
                 <Grid container spacing={2}>
                     <Grid item xs={12}>
                         
-                        <img className='w-full h-[40vh] object-cover' src="https://i.postimg.cc/Vk2WJ6jp/restaurant-5521372.jpg" alt="" />
+                        <img className='w-full h-[40vh] object-cover' src=/*{restaurant.restaurant?.images[0]}*/"" alt="" />
 
                     </Grid>
                     <Grid item xs={12} lg={6}>
                         
-                        <img className='w-full h-[40vh] object-cover' src="https://cdn.pixabay.com/photo/2021/02/08/12/40/lasagna-5994612_960_720.jpg" alt="" />
+                        <img className='w-full h-[40vh] object-cover' src=/*{restaurant.restaurant?.images[1]}*/"" alt="" />
 
                     </Grid>
                     <Grid item xs={12} lg={6}>
                         
-                        <img className='w-full h-[40vh] object-cover' src="https://cdn.pixabay.com/photo/2020/06/30/15/03/table-5356682_640.jpg" alt="" />
+                        <img className='w-full h-[40vh] object-cover' src=/*{restaurant.restaurant?.images[2]}*/"" alt="" />
                     </Grid>
                 </Grid>
             </div>
             <div className='pt-3 pb-5'>
-                <h1 className='text-4xl font-semibold'>Mamas</h1>
+                <h1 className='text-4xl font-semibold'>{restaurant.restaurant?.name}</h1>
                 <div className='space-y-3 mt-3'>
-                    <p className='text-gray-500 mt-1'>Lorem ipsum dolor sit amet, consectetur adipiscing
-                     elit. Aenean commodo lorem tellus, ut interdum diam hendrerit eu. 
-                     Quisque viverra libero vitae nunc mollis ornare. Aenean vehicula 
-                     euismod mauris nec volutpat. Interdum et malesuada fames ac ante 
-                     ipsum primis in faucibus.
-                    </p>
+                    <p className='text-gray-500 mt-1'>{restaurant.restaurant?.description}</p>
                     <p className='text-gray-500 flex items-center gap-3'>
                         <LocationOnIcon/>
                         <span>
